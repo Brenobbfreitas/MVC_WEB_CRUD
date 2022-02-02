@@ -28,6 +28,8 @@ namespace MatrixCRUDTech.Models
         [Column(TypeName = "decimal(5,2)")]
         public double IndiceDesejado { get; set; }
 
+        [Required]
+        [DisplayFormat(DataFormatString = "{O:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public System.DateTime Data { get; set; }
     }
 }
