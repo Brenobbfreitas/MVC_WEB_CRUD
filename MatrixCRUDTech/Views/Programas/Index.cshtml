@@ -1,17 +1,20 @@
 ﻿@model IEnumerable<MatrixCRUDTech.Models.Programa>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Cadastro Programa";
 }
 
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="AddOrEdit">Criar Novo Programa</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Codigo)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Descricao)
             </th>
@@ -30,6 +33,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Codigo)
+            </th>
             <td>
                 @Html.DisplayFor(modelItem => item.Descricao)
             </td>
@@ -43,6 +49,7 @@
                 @Html.DisplayFor(modelItem => item.ObjMilenio)
             </td>
             <td>
+
                 <a asp-action="Edit" asp-route-id="@item.Codigo">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Codigo">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Codigo">Delete</a>

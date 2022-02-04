@@ -10,16 +10,22 @@ namespace MatrixCRUDTech.Models
     public class Programa
     {
         [Key]
+        [StringLength(4, ErrorMessage =
+             "No maximo 4 Digitos")]
+        [Required(ErrorMessage = "Este campo é de preenchimento obrigatório")]
         public int Codigo { get; set; }
 
-        [Column(TypeName = "varchar(70)")]
+        [Column(TypeName = "varchar(70)")][Required(ErrorMessage = "Este campo é de preenchimento obrigatório")]
         public string Descricao { get; set; }
 
         [Column(TypeName = "varchar(70)")]
         public string PublicoAlvo { get; set; }
 
+        [Required(ErrorMessage = "Este campo é de preenchimento obrigatório")]
         public int Tipo { get; set; }
 
+        [Display(Name = "Objetivo do Milenio")]
+        [Required(ErrorMessage = "Este campo é de preenchimento obrigatório")]
         public int ObjMilenio { get; set; }
 
         //relacionamento IndicadorPrograma (1,1)
